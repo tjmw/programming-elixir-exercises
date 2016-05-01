@@ -8,11 +8,11 @@ defmodule Chop do
     IO.puts guess
   end
 
-  defp test_guess(actual, guess, lower..upper) when actual > guess do
+  defp test_guess(actual, guess, _..upper) when actual > guess do
     guess(actual, (guess + 1)..upper)
   end
 
-  defp test_guess(actual, guess, lower..upper) when actual < guess do
+  defp test_guess(actual, guess, lower.._) when actual < guess do
     guess(actual, lower..(guess - 1))
   end
 
